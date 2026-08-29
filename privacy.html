@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy — Namma Indies</title>
+<meta name="description" content="What IndieDex stores, who can see it, and what we don't do with it.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Namma Indies">
+<meta property="og:title" content="Privacy — Namma Indies">
+<meta property="og:description" content="What IndieDex stores, who can see it, and what we don't do with it.">
+<meta property="og:url" content="https://nammaindies.org/privacy.html">
+<meta property="og:image" content="https://nammaindies.org/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy — Namma Indies">
+<meta name="twitter:description" content="What IndieDex stores, who can see it, and what we don't do with it.">
+<meta name="twitter:image" content="https://nammaindies.org/og-image.png">
+<style>
+  :root {
+    --ink: #2b2620;
+    --paper: #faf7f2;
+    --muted: #6f6659;
+    --rule: #e4ddd0;
+    --accent: #a5502e;
+    --code-bg: #f0ebe1;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  main {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+  }
+
+  header {
+    margin-bottom: 2.5rem;
+  }
+
+  .eyebrow {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 1rem;
+  }
+
+  .eyebrow a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .eyebrow a:hover { color: var(--accent); }
+
+  h1 {
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.6rem;
+  }
+
+  .tagline {
+    font-size: 1.15rem;
+    color: var(--muted);
+    font-style: italic;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1.45rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 3rem 0 1rem;
+  }
+
+  h3 {
+    font-size: 1.12rem;
+    font-weight: 600;
+    margin: 2rem 0 0.5rem;
+  }
+
+  p {
+    font-size: 1.08rem;
+    margin: 0 0 1.3rem;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+
+  a:hover, a:focus { opacity: 0.75; }
+
+  em { font-style: italic; }
+
+  .lede {
+    font-size: 1.2rem;
+    color: var(--ink);
+  }
+
+  .close {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    font-size: 1.15rem;
+  }
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .pagenav a {
+    color: var(--muted);
+    border-bottom: none;
+    margin-right: 1.1rem;
+  }
+
+  .pagenav a:hover { color: var(--accent); opacity: 1; }
+
+  .pagenav a[aria-current="page"] {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .wordmark { margin: 1rem 0 0; }
+  .wordmark a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .wordmark a:hover { color: var(--accent); border-color: currentColor; }
+
+  .brand { margin-bottom: 1.1rem; }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: none;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .logo:hover, .logo:focus { opacity: 1; }
+
+  .logo-mark {
+    width: 1.5em;
+    height: 1.5em;
+    overflow: visible;
+    flex: none;
+  }
+
+  .logo-mark path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .logo:hover .logo-mark,
+  .logo:focus .logo-mark {
+    animation: wag 0.9s ease-in-out;
+    transform-origin: 60% 75%;
+  }
+
+  @keyframes wag {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-9deg); }
+    60% { transform: rotate(7deg); }
+  }
+
+  ul {
+    font-size: 1.08rem;
+    margin: 0 0 1.3rem;
+    padding-left: 1.2rem;
+  }
+
+  li { margin-bottom: 0.55rem; }
+
+  .updated {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+  }
+
+  .dinkus {
+    text-align: center;
+    margin: 3rem 0;
+    color: var(--muted);
+    opacity: 0.7;
+  }
+
+  .dinkus svg {
+    width: 1.9rem;
+    height: 1.9rem;
+    overflow: visible;
+  }
+
+  .dinkus path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo:hover .logo-mark,
+    .logo:focus .logo-mark { animation: none; }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #ece6db;
+      --paper: #1c1913;
+      --muted: #a89d8a;
+      --rule: #3a3428;
+      --accent: #e0895a;
+      --code-bg: #26221a;
+    }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="brand"><a class="logo" href="index.html"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M9 25 C9 16 13 12 19 12 C24 12 27 15 27 19.5 C27 23.5 23.5 25.5 20.5 24 C18.3 22.9 18 20 20 18.7"/></svg><span>Namma Indies</span></a></p>
+    <h1>Privacy</h1>
+    <p class="tagline">what indiedex stores, and who can see it</p>
+    <p class="updated">Last updated 29 August 2026</p>
+  </header>
+
+  <section>
+    <p class="lede">IndieDex is a small pilot run by Namma Indies. You photograph street dogs; we work out which ones you have already met. This page says exactly what that involves, in plain language.</p>
+
+    <p>The short version: we store your email, your photos, and where and when each photo was taken. Everyone else in the pilot can see those sightings on a shared map. We don't run ads, we don't use analytics, and we don't sell or share any of it with anyone outside the pilot.</p>
+  </section>
+
+  <section>
+    <h2>What we collect</h2>
+
+    <p><strong>Your email address</strong> — so we can send you a sign-in link. That is the only thing we use it for. If you joined with a shared passcode instead, we store the name you typed and no address at all.</p>
+
+    <p><strong>Photos you take or import.</strong> Whatever you upload, at the resolution you upload it.</p>
+
+    <p><strong>Where and when.</strong> Every sighting carries a timestamp and, usually, a coordinate. That comes from one of three places, and we record which: your device's GPS at the moment you shoot; the location already saved inside a photo you imported from your camera roll; or a point you place on the map yourself. If none of those are available, the sighting is stored without a location.</p>
+
+    <p><strong>What the model works out.</strong> For each dog photo we compute a numeric fingerprint and store it alongside the photo. That is what lets the app say "you have seen this dog before". It describes the dog, not you.</p>
+
+    <p>That is the whole list. There is no analytics package, no advertising SDK, no crash-reporting library, and no third-party tracker anywhere in the app or on this site. We do not ask for your contacts, your phone number, or anything from your device beyond the camera, the photos you choose, and location while you are using it.</p>
+  </section>
+
+  <section>
+    <p>One exception worth naming: if you are testing the iPhone app through TestFlight, Apple sends us crash reports and any feedback you submit from inside TestFlight. That is Apple's mechanism, not ours, and it is covered by <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. The Android app has no equivalent.</p>
+  </section>
+
+  <section>
+    <h2>Who can see your sightings</h2>
+
+    <p>This is the part worth reading twice. <strong>Everyone signed in to the pilot can see every sighting, at full precision.</strong> The map shows the exact coordinate where each photo was taken, including yours. Tapping a sighting shows who logged it.</p>
+
+    <p>We keep the location exact rather than blurring it because matching a dog depends on knowing it was found within a few hundred metres of where it was found before. Coarsening the coordinate would break the thing the app is for.</p>
+
+    <p>The consequence is that a coordinate you record near your home is visible to everyone else in the pilot. That is why the pilot is small and sign-in is required — nothing is public, nothing is indexed by search engines, and there is no anonymous access. Think of it as a shared notebook among people who opted in, not a public map.</p>
+  </section>
+
+  <section>
+    <h2>Where it lives</h2>
+
+    <p>On servers we run ourselves, in AWS's Mumbai region. Photos sit in our own storage bucket in the same region. Your data does not leave India in the ordinary course of using the app.</p>
+
+    <p>Two outside services are involved, both narrowly:</p>
+
+    <ul>
+      <li><strong>Amazon Web Services</strong> hosts the server, the database and the photos, and sends the sign-in emails. AWS is our infrastructure provider, not a party we share data with for its own purposes.</li>
+      <li><strong>CARTO</strong> serves the background map tiles. When the map loads, your device fetches those tiles directly from CARTO, so they see your IP address — the same as any website that loads a map. They receive nothing about your dogs, your sightings or your account.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What we don't do</h2>
+
+    <p>We do not sell your data. We do not share it with advertisers, brokers, or any third party for their own use. We do not track you across other apps or websites. We do not build a profile of you. There is no monetisation of any kind in IndieDex, and no plan for one.</p>
+
+    <p>If that ever changes, this page changes first, and we will tell you before it takes effect rather than after.</p>
+  </section>
+
+  <section>
+    <h2>How long we keep things</h2>
+
+    <p>Sightings are meant to accumulate — a record of a dog is worth more the longer it runs, which is the entire point of the project — so we keep them indefinitely by default. Sign-in tokens are stored only as a hash, expire in 30 minutes, and are destroyed the moment they are used.</p>
+
+    <p><strong>You can ask us to delete your account and everything you contributed, and we will.</strong> Email <a href="mailto:hello@nammaindies.org">hello@nammaindies.org</a> and we will remove your account, your photos and your sightings, and confirm when it is done. You can also ask for a copy of what we hold about you. There is no form and no waiting period; a person reads the mail.</p>
+  </section>
+
+  <section>
+    <h2>Children</h2>
+
+    <p>IndieDex is not aimed at children and we do not knowingly collect anything from anyone under 13. If you believe a child has signed up, write to us and we will delete the account.</p>
+  </section>
+
+  <div class="dinkus" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M9 25 C9 16 13 12 19 12 C24 12 27 15 27 19.5 C27 23.5 23.5 25.5 20.5 24 C18.3 22.9 18 20 20 18.7"/></svg></div>
+
+  <section class="close">
+    <p>IndieDex is <a href="https://github.com/namma-indies/app">open source</a>. If you want to know exactly what is stored rather than take our word for it, the database schema is in that repository and you can read it.</p>
+
+    <p>Questions, corrections, or anything that reads as wrong to you: <a href="mailto:hello@nammaindies.org">hello@nammaindies.org</a>.</p>
+  </section>
+
+  <footer>
+    <nav class="pagenav">
+      <a href="https://github.com/namma-indies">GitHub</a>
+      <a href="index.html">Home</a>
+      <a href="problem.html">Why</a>
+      <a href="technical.html">How</a>
+      <a href="app.html">App</a>
+      <a href="join.html">Join Us</a>
+    </nav>
+    <p class="wordmark"><a href="https://instagram.com/nammaindies">Instagram</a> · <a href="https://x.com/nammaindies">X</a> · nammaindies.org</p>
+  </footer>
+</main>
+</body>
+</html>
