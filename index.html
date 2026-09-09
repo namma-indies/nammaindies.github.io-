@@ -129,6 +129,42 @@
     font-weight: 500;
   }
 
+  .pagenav a.app-link {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .pagenav-top {
+    margin-bottom: 2rem;
+  }
+
+  .app-cta {
+    margin: 1.6rem 0 0;
+  }
+
+  .app-cta .btn {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--paper);
+    background: var(--accent);
+    border-bottom: none;
+    border-radius: 0.5rem;
+    padding: 0.7rem 1.4rem;
+    text-decoration: none;
+  }
+
+  .app-cta .btn:hover,
+  .app-cta .btn:focus {
+    opacity: 0.85;
+  }
+
+  .app-cta .note {
+    display: block;
+    margin-top: 0.6rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
   .wordmark { margin: 1rem 0 0; }
   .wordmark a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
   .wordmark a:hover { color: var(--accent); border-color: currentColor; }
@@ -191,11 +227,19 @@
 <body>
 <main>
   <header>
+    <nav class="pagenav pagenav-top">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="problem.html">Why</a>
+      <a href="technical.html">How</a>
+      <a href="app.html" class="app-link">App</a>
+      <a href="join.html">Join Us</a>
+    </nav>
     <div class="hero-mark" aria-hidden="true">
       <svg viewBox="0 0 32 32"><path d="M9 25 C9 16 13 12 19 12 C24 12 27 15 27 19.5 C27 23.5 23.5 25.5 20.5 24 C18.3 22.9 18 20 20 18.7"/></svg>
     </div>
     <h1>Namma Indies</h1>
     <p class="tagline">every street dog, known and named</p>
+    <p class="app-cta"><a class="btn" href="https://app.nammaindies.org">Open the IndieDex →</a><span class="note">Snap a dog, drop a pin, help build the map.</span></p>
   </header>
 
   <section>
@@ -216,7 +260,7 @@
       <a href="index.html" aria-current="page">Home</a>
       <a href="problem.html">Why</a>
       <a href="technical.html">How</a>
-      <a href="app.html">App</a>
+      <a href="app.html" class="app-link">App</a>
       <a href="join.html">Join Us</a>
     </nav>
     <p class="wordmark"><a href="https://instagram.com/nammaindies">Instagram</a> · <a href="https://x.com/nammaindies">X</a> · <a href="privacy.html">Privacy</a> · nammaindies.org</p>
